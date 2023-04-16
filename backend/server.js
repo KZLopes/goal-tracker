@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
+const connectDB = require('./config/db');
 const dotenv = require('dotenv').config();
 const { errorHandler } = require('./middleware/error');
 const goalRoutes = require('./routes/goal');
+
+connectDB();
 
 //Body Parsing
 app.use(express.urlencoded({ extended: false }));

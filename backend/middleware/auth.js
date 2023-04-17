@@ -14,9 +14,12 @@ module.exports = {
         // Get Token from Header
         token = req.headers.authorization.split(' ')[1];
 
+        // Verify Token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+        // Get user from the token
         req.user = await User.findById(decoded.id).select('-password');
+
         next();
       } catch (err) {
         console.log(err);

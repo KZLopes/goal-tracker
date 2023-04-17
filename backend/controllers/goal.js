@@ -34,16 +34,14 @@ module.exports = {
         throw new Error('Goal not found');
       }
 
-      const user = await User.findById(req.user.id);
-
-      // Check for user
-      if (!user) {
+      // Check for user (Middleware got the user and it got assigned to req.user)
+      if (!req.user) {
         res.status(401);
         throw new Error('User Not Found');
       }
 
       // Make sure Logged user matches the author
-      if (goal.user.toString() !== user.id) {
+      if (goal.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error('Usuario nao Autorizado');
       }
@@ -72,16 +70,14 @@ module.exports = {
         throw new Error('Goal not found');
       }
 
-      const user = await User.findById(req.user.id);
-
-      // Check for User
-      if (!user) {
+      // Check for User (Middleware got the user and it got assigned to req.user)
+      if (!req.user) {
         res.status(401);
         throw new Error('User Not Found');
       }
 
       // Make sure Logged user matches the author
-      if (goal.user.toString() !== user.id) {
+      if (goal.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error('Usuario nao Autorizado');
       }

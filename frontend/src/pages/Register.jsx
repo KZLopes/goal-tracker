@@ -66,9 +66,9 @@ function Register() {
     <>
       <section className='heading'>
         <h1>
-          <FaUser /> Register
+          <FaUser /> Cadastro
         </h1>
-        <p>Please Create an Account</p>
+        <p>Crie sua conta!</p>
       </section>
 
       <section className='form'>
@@ -119,7 +119,7 @@ function Register() {
           </div>
           <div className='form-group'>
             <button type='submit' className='btn btn-block'>
-              Submit
+              Enviar
             </button>
           </div>
         </form>

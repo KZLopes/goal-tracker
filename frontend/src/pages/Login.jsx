@@ -61,7 +61,7 @@ function Login() {
         <h1>
           <FaSignInAlt /> Login
         </h1>
-        <p>Login and Start Setting Goals</p>
+        <p>Acesse e planeje o seu dia</p>
       </section>
       <section className='form'>
         <form onSubmit={onSubmit}>
@@ -89,7 +89,7 @@ function Login() {
           </div>
           <div className='form-group'>
             <button type='submit' className='btn btn-block'>
-              Submit
+              Confirmar
             </button>
           </div>
         </form>

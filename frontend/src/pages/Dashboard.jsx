@@ -36,8 +36,8 @@ function Dashboard() {
   return (
     <>
       <section className='heading'>
-        <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
+        <h1>Olá {user && user.name}</h1>
+        <p>Seu Painel</p>
       </section>
       <GoalForm />
       <section className='content'>
@@ -48,7 +48,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>You Have Not Set Any Goals</h3>
+          <h3>Parece que você ainda não adicionou nenhum objetivo</h3>
         )}
       </section>
     </>

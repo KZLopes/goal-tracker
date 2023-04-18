@@ -61,7 +61,7 @@ module.exports = {
     }
   }),
 
-  deleteGoal: asyncHandler(async (req, res) => {
+  deleteGoal: asyncHandler(async (req, res, next) => {
     try {
       const goal = await Goal.findById(req.params.id);
 
@@ -77,12 +77,12 @@ module.exports = {
       }
 
       // Make sure Logged user matches the author
-      if (goal.user.toString() !== req.user.id) {
+      if (goal.author.toString() !== req.user.id) {
         res.status(401);
         throw new Error('Usuario nao Autorizado');
       }
 
-      goal.remove();
+      await goal.deleteOne();
       res.status(200).json({ id: req.params.id });
     } catch (err) {
       return next(err);
